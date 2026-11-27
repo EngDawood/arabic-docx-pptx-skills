@@ -19,7 +19,7 @@
 من دليل Claude للبلوقنات بعد إدراجه، أو في Claude Code:
 
 ```bash
-/plugin marketplace add Dawood-Saleh/arabic-docx-pptx-skills
+/plugin marketplace add EngDawood/arabic-docx-pptx-skills
 /plugin install arabic-docx-pptx@arabic-docx-pptx-skills
 ```
 
