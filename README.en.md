@@ -11,7 +11,7 @@ Category: Documents & Academic Writing.
 | Skill | Arabic name | What it does |
 |---|---|---|
 | `arabic-docx` | تحويل مستندات Claude إلى ورد (عربي RTL) | Builds an Arabic right-to-left Word file in a Saudi master's-thesis house style: cover page, a table of contents Word fills on open, page numbers starting at the body, native Word tables, equations and pictures. Works from a Claude Doc or directly with no doc. English documents use `english-docx`. |
-| `english-docx` | Simple English Word | Builds a normal, plain English Word file: Arial, clear headings, simple tables, lists, equations and pictures. No cover or contents page unless asked. APA or another style only when you name it. |
+| `english-docx` | Simple English Word | Builds a normal, plain English Word file: Arial or Times New Roman, clear headings, simple tables, lists, equations and pictures. No cover or contents page unless asked. APA or another style only when you name it. |
 | `arabic-pptx` | عروض بوربوينت عربية صحيحة الاتجاه | Builds Arabic PowerPoint decks with correct direction, and repairs decks whose periods or numbers landed on the wrong side, with a reference for shapes, diagrams and SmartArt. |
 
 ## Install
