@@ -11,7 +11,7 @@
     {
       "name": "arabic-docx-pptx",
       "source": "./",
-      "description": "Arabic RTL Word (.docx) and PowerPoint (.pptx) files with correct direction, cover, contents and numbering; English Word in APA 7.",
+      "description": "Arabic RTL Word (.docx) and PowerPoint (.pptx) files with correct direction, cover, contents and numbering; plain English Word (APA only on request).",
       "category": "productivity",
       "tags": [
         "documents",

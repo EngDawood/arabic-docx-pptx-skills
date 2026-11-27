@@ -81,11 +81,3 @@ A centered left-to-right paragraph (no `w:bidi`), 4 pt before and after, line 1.
 ## Pictures
 
 Centered paragraph, 6 before, 4 after, line 1.0, keep with next; width scaled down to the text width and the height to at most 18 cm (`run.add_picture(path, width=…)`). A chart's caption goes under it as a caption line. A missing file leaves `[صورة: alt]` as text and counts as missing.
-
-## English (APA 7)
-
-- US Letter, margins 2.54 cm, Times New Roman 12 pt, double spacing, 0 space between paragraphs, body left-aligned with first line indented 1.27 cm.
-- Page number top right in the header (`PAGE` field).
-- `#` title bold centered (Title style). `##` Level 1 bold centered; `###` Level 2 bold flush left; `####` Level 3 bold italic flush left; `#####` Level 4 bold, indented.
-- `Table n: Title` → "Table n" bold on its own line, the title italic on the next. Tables: borders only on top, under the header row, and at the bottom; header repeats; rows unsplit. A `Note.` line under a table: "Note." italic, then the text.
-- Lists double-spaced, each numbered list restarts at 1. `References` heading starts a new page; entries hanging indent 1.27 cm. No cover or contents page.

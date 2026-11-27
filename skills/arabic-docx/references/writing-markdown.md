@@ -11,4 +11,3 @@ The builder reads plain markdown. Everything before the first real `##` is the c
 - **Body**: `##` for sections (they fill the contents page), `###` for subsections, numbered `1.1` when the client numbers headings.
 - **Tables**: pipe tables, a caption line above (`جدول (1): …`), a `المصدر: …` line under one that has a source.
 - **Equations** `$$…$$`; **page break** `---`; **pictures** `![alt](/abs/path.png)`; **references** under `## المراجع`, one entry per paragraph.
-- **English** (APA 7): same shapes, no cover or contents page; title-page lines under `# Title` print as ordinary paragraphs.
