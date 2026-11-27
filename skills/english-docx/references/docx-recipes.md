@@ -61,3 +61,7 @@ Centered paragraph, 6 before, 4 after, keep with next; width scaled down to the 
 
 - Cover: each line its own centered paragraph, title 26 bold about 110 pt down, fields as `label: value` lines under it, then a page break; the cover section has no footer.
 - Contents: centered bold `Contents` 16 pt, then one paragraph holding a TOC field (`TOC \o "2-3" \h \z \u`, begin/instr/separate/hint/end runs, `w:dirty="true"`), plus `<w:updateFields w:val="true"/>` in settings so Word fills it on open. Body goes in a new section with `w:pgNumType w:start="1"`.
+
+## Metadata and clean output
+
+Before saving: `cp = doc.core_properties`; set `author`, `last_modified_by`, `title`, `subject`, `keywords`, `comments`, `category` to `''` (python-docx's default template stamps its own name in them). Never create a comments part, `w:ins`/`w:del`, `w:vanish` or highlights. Code goes in ordinary paragraphs with no shading or borders. Headers and footers hold the page number only.

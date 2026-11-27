@@ -32,9 +32,23 @@ A client's existing .docx to fill or edit takes neither route: edit that file in
    - Chart: `read` `ref: {object: "node", id: "<id>"}`, `engine: "widget"`, `payload: {"kind": "screenshot"}` saves a PNG.
    - Write `<scratch>/images.json` as a list of `{"alt": "<alt or caption>", "path": "<file>"}` in order.
 4. **Write the builder.** Read `references/docx-recipes.md` in full, then write `<scratch>/build.py` (python-docx; `pip install python-docx` when the import fails) that turns the markdown into the .docx and prints the summary line the recipes define. Reuse it for every later file in the session.
-5. **Build.** `python3 <scratch>/build.py <input.md> "<doc title>.docx" [<scratch>/images.json]`. Done when the summary shows `equations` equal to the formulas in the doc and `0 missing` images.
+5. **Build.** `python3 <scratch>/build.py <input.md> "<doc title>.docx" [<scratch>/images.json]`. Done when the summary shows `equations` equal to the formulas in the doc and `0 missing` images, and the file passes the delivery-clean list: `unzip -l` shows no `word/comments.xml`, `word/document.xml` has no `w:ins`, `w:del` or `w:vanish`, and `docProps/core.xml` has empty author and last-modified-by.
 6. **Verify.** `soffice --headless --convert-to pdf` (set `HOME=/tmp SAL_USE_VCLPLUGIN=svp` when it complains about a display), then `pdftoppm -r 60 -png` and view the first page, a table page, a list page, and pages with a formula or picture. Done when: headings, tables and lists look as the tables below say; every numbered list starts at 1; formulas are real equations with no leftover `_`, `\` or `$`; pictures sit centered with the caption under them; no box glyphs.
-7. **Deliver.** Send the file (SendUserFile where the session has it), one clean file named after the doc title. Name anything missing (a picture that could not be fetched, every `[…]` placeholder left in the file).
+7. **Deliver.** Send the file (SendUserFile where the session has it), one clean file named after the doc title. Name anything missing (a picture that could not be fetched, every empty field the person must fill).
+
+## Delivery-clean output (built in)
+
+The file leaves the builder ready to hand over; nothing is cleaned afterwards. Every rule applies unless the user's brief says otherwise (say which rule you skipped and why).
+
+- **Metadata blank**: set `core_properties` author, last_modified_by, title, subject, keywords, comments and category to empty strings (python-docx's template stamps its own name in them). No company, no custom properties, no thumbnail.
+- **No comments, tracked changes, hidden text or highlights** anywhere in the file.
+- **Fill-in fields** keep their label and leave the value empty: `Student:`, not `Student: [Full name]`. The person writes his own details.
+- **No notes to the writer or student, no self-notes, no assumptions or reminders**, no chatbot phrases ("Here is", "I hope this helps"), no tool or watermark marks, no markdown leftovers (`**`, `#`, `|---|`, `$$`) in the text. Keep reasoning in the chat.
+- **In-text citations** only when the brief or the user requires them; otherwise write the body without `(Author, year)` and keep the reference list. The reference list is in the document's language.
+- **Headers and footers** hold the page number only: no report title, no author name.
+- **Code, commands and terminal output** go in ordinary paragraphs: no shading, no borders, no single-cell table around them.
+- **Plain look**: black text on white; a report that comes with a project (a website, an app, a design) does not use the project's colors, gradients or branding.
+- **File name**: words separated by spaces or hyphens, no underscores, no `.clean` suffix (`Field Training Report.docx`); a naming rule in the brief replaces this.
 
 ## Plain style (default)
 
@@ -58,4 +72,4 @@ A client's existing .docx to fill or edit takes neither route: edit that file in
 
 ## Writing the markdown (direct route)
 
-Plain markdown: `#` title, `##`/`###` sections, pipe tables with a caption line above, `-` and `1.` lists, `$$…$$` equations, `![alt](/abs/path.png)` pictures. Write the sections the user asked for, in full prose; no filler headings. A field the user has not given is a `[placeholder]`.
+Plain markdown: `#` title, `##`/`###` sections, pipe tables with a caption line above, `-` and `1.` lists, `$$…$$` equations, `![alt](/abs/path.png)` pictures. Write the sections the user asked for, in full prose; no filler headings. A field the user has not given keeps its label with an empty value (`Student:`).

@@ -81,3 +81,7 @@ A centered left-to-right paragraph (no `w:bidi`), 4 pt before and after, line 1.
 ## Pictures
 
 Centered paragraph, 6 before, 4 after, line 1.0, keep with next; width scaled down to the text width and the height to at most 18 cm (`run.add_picture(path, width=…)`). A chart's caption goes under it as a caption line. A missing file leaves `[صورة: alt]` as text and counts as missing.
+
+## Metadata and clean output
+
+Before saving: `cp = doc.core_properties`; set `author`, `last_modified_by`, `title`, `subject`, `keywords`, `comments`, `category` to `''` (python-docx's default template stamps its own name in them). Never create a comments part, `w:ins`/`w:del`, `w:vanish` or highlights. Code goes in ordinary paragraphs with no shading or borders. Headers and footers hold the page number only.

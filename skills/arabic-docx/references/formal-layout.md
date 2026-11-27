@@ -10,7 +10,7 @@ Ask once, before building: font and size, and which front matter to include. Sug
 - Times New Roman 12, A4, 1-inch margins, line spacing 340 (about 1.4).
 - Page numbers in the footer, restarting at 1 on the first page after the cover and contents.
 
-Cover fields the user has not given (university, college, student name, ID, course, instructor, date) stay as `[اسم الجامعة]`-style placeholders. Never invent them. List the placeholders in the delivery message.
+Cover fields the user has not given (university, college, student name, ID, course, instructor, date) keep their label with an empty value (`الطالب:`). Never invent them. List the empty fields in the delivery message.
 
 ## 2. Direction (bidi): the mistakes that cost the most time
 
@@ -53,7 +53,7 @@ The page numbers come from LibreOffice's layout. Tell the user: if Word paginate
   - English entries are LTR paragraphs, hanging indent 720 DXA, sorted alphabetically.
   - Same author and year: add `a`, `b`, `c` after the year (`2026a`). No date: `n.d.-a`, `n.d.-b`.
   - Pages whose content changes (prices, quotes, market data) get "Retrieved Month D, YYYY, from URL". Do not invent a retrieval date: use the date the page was actually read, or the build date, and tell the user which.
-  - A lecture or course material the user has not described stays a bracketed placeholder entry; the user fills it in.
+  - A lecture or course material the user has not described is left out of the list; name it in the delivery message so the user adds it.
   - Make URLs clickable.
 - The body usually has no in-text citations. Offer to add `(Author, year)` citations; do not add them unasked.
 
@@ -67,4 +67,4 @@ Done when all of these hold on the rendered PDF:
 - Signed numbers, percentages and tickers read correctly in tables and prose, and no word is reversed.
 - Every formula is an editable equation, not an image or text with `_`, `\` or `$` left in it.
 - The docx passes validation (open and re-save it in LibreOffice without errors).
-- The delivery message names every placeholder still in the file, every assumed date, and the Update Field note from section 4.
+- The delivery message names every empty field still in the file, every assumed date, and the Update Field note from section 4.
