@@ -1,6 +1,6 @@
 {
   "name": "arabic-docx-pptx",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "displayName": "Arabic Word & PowerPoint (RTL)",
   "description": "Arabic right-to-left Word and PowerPoint files that open correct: Word reports in a Saudi thesis house style (cover, contents, equations, tables) from a Claude Doc or written directly, plain English Word files (APA only on request), and Arabic decks with correct direction, punctuation and numbering.",
   "author": {
