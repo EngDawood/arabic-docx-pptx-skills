@@ -1,6 +1,6 @@
 ---
 name: english-docx
-description: Builds English Word .docx files in a plain, normal look (Calibri, simple headings, simple tables), from a Claude Doc or written directly. APA, MLA or other styles only when the user names one. Use for Claude Doc to Word in English, an English Word file with no Claude Doc, a simple report, assignment, letter or notes in docx.
+description: Builds English Word .docx files in a plain, normal look (Arial, simple headings, simple tables), from a Claude Doc or written directly. APA, MLA or other styles only when the user names one. Use for Claude Doc to Word in English, an English Word file with no Claude Doc, a simple report, assignment, letter or notes in docx.
 ---
 
 # English docx (Claude Doc → Word, or Word directly)
@@ -39,7 +39,7 @@ A client's existing .docx to fill or edit takes neither route: edit that file in
 | Element | Style |
 |---|---|
 | Page | A4, margins 2.54 cm, page number centered in the footer (omit for a one-page doc) |
-| Body | Calibri 11, black, left-aligned, line 1.15, 8 pt after, no first-line indent |
+| Body | Arial 11, black, left-aligned, line 1.15, 8 pt after, no first-line indent |
 | `#` | document title, 20 bold, left-aligned; Title style |
 | `##` | 16 bold |
 | `###` | 13 bold |
